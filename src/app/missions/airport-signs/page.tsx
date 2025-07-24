@@ -1,6 +1,8 @@
 "use client";
 import Link from 'next/link';
 import Quiz from '../../components/Quiz';
+import FillInTheBlank from '../../components/FillInTheBlank';
+import MazeGame from '../../components/MazeGame';
 
 const quizQuestions = [
   {
@@ -45,6 +47,26 @@ const quizQuestions = [
   },
 ];
 
+const fillInTheBlankQuestions = [
+    {
+        question: "The sign for 'Arrivals' is ____.",
+        answer: "Ketibaan"
+    },
+    {
+        question: "If you are departing, you should look for the ____ sign.",
+        answer: "Berlepas"
+    },
+    {
+        question: "The word for 'Toilets' in Malay is ____.",
+        answer: "Tandas"
+    },
+    {
+        question: "To find your gate, you need to look for the sign that says ____.",
+        answer: "Pintu"
+    }
+];
+
+
 export default function AirportSignsPage() {
   return (
     <div className="min-h-screen bg-gray-100">
@@ -63,7 +85,18 @@ export default function AirportSignsPage() {
           <p className="text-lg text-gray-700 mb-8">
             You&apos;ve just landed at Kuala Lumpur International Airport (KLIA). Navigate your way through the airport by understanding the signs.
           </p>
-          <Quiz questions={quizQuestions} />
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Multiple Choice Quiz</h2>
+            <Quiz questions={quizQuestions} />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Fill in the Blank</h2>
+            <FillInTheBlank questions={fillInTheBlankQuestions} />
+          </div>
+          <div className="mt-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Maze Game</h2>
+            <MazeGame />
+          </div>
         </div>
       </main>
     </div>

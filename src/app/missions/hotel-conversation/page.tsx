@@ -1,6 +1,7 @@
 "use client";
 import Link from 'next/link';
 import Quiz from '../../components/Quiz';
+import FillInTheBlank from '../../components/FillInTheBlank';
 
 const quizQuestions = [
   {
@@ -50,6 +51,29 @@ const quizQuestions = [
   },
 ];
 
+const fillInTheBlankQuestions = [
+    {
+        question: "To say 'I have a reservation', you would say 'Saya ada ____'.",
+        answer: "tempahan"
+    },
+    {
+        question: "To request 'A room for one night', you would say '____ untuk satu malam'.",
+        answer: "Bilik"
+    },
+    {
+        question: "To ask 'What time is breakfast?', you would say 'Pukul berapa ____ ____?'.",
+        answer: "sarapan pagi"
+    },
+    {
+        question: "To ask for the Wi-Fi password, you can say 'Boleh saya dapatkan kata laluan ____?'.",
+        answer: "Wi-Fi"
+    },
+    {
+        question: "A simple way to say 'Thank you' is '____ ____'.",
+        answer: "Terima kasih"
+    }
+];
+
 export default function HotelConversationPage() {
   return (
     <div className="min-h-screen bg-gray-100">
@@ -68,7 +92,14 @@ export default function HotelConversationPage() {
           <p className="text-lg text-gray-700 mb-8">
             You need to check into your hotel. Use these phrases to communicate with the receptionist.
           </p>
-          <Quiz questions={quizQuestions} />
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Multiple Choice Quiz</h2>
+            <Quiz questions={quizQuestions} />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Fill in the Blank</h2>
+            <FillInTheBlank questions={fillInTheBlankQuestions} />
+          </div>
         </div>
       </main>
     </div>
