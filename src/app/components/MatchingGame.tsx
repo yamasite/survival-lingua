@@ -66,7 +66,7 @@ export default function MatchingGame({ items }: MatchingGameProps) {
           ))}
         </div>
       </div>
-      {completed && <div className="mt-4 text-center text-green-500 font-bold">Congratulations! You've matched them all!</div>}
+      {completed && <div className="mt-4 text-center text-green-500 font-bold">Congratulations! You&apos;ve matched them all!</div>}
     </div>
   );
 }

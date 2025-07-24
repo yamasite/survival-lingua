@@ -40,7 +40,7 @@ const DrivingGame = () => {
     if (sign) {
       setCurrentQuestion(sign);
     }
-  }, [carPosition]);
+  }, [carPosition, roadSigns]);
 
   useEffect(() => {
     if (gameAreaRef.current) {

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 const initialMaze = [
   [1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -69,7 +69,7 @@ const MazeGame = () => {
   const [question, setQuestion] = useState<Question | null>(null);
   const [feedback, setFeedback] = useState('');
 
-  const handleKeyDown = (e: KeyboardEvent) => {
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (question) return;
 
     const { x, y } = playerPosition;
@@ -92,7 +92,7 @@ const MazeGame = () => {
         setMaze(newMaze);
       }
     }
-  };
+  }, [question, playerPosition, maze]);
 
   const handleAnswer = (answer: string) => {
     if (question) {
@@ -110,7 +110,7 @@ const MazeGame = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [playerPosition, question, maze]);
+  }, [handleKeyDown]);
 
   return (
     <div className="text-center">
