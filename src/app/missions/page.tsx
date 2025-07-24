@@ -29,6 +29,9 @@ export default function Missions() {
           </Link>
         </div>
       </main>
+      <footer className="text-center py-4">
+        <p><a href="https://beian.miit.gov.cn/" target="_blank"  className="text-gray-500 hover:text-gray-700">沪ICP备2022015296号-1</a></p>
+      </footer>
     </div>
   );
 }

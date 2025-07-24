@@ -15,6 +15,9 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      <footer className="absolute bottom-0 text-center py-4">
+        <p><a href="https://beian.miit.gov.cn/" target="_blank"  className="text-gray-500 hover:text-gray-700">沪ICP备2022015296号-1</a></p>
+      </footer>
     </main>
   );
 }
