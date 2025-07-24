@@ -61,7 +61,7 @@ export default function AirportSignsPage() {
         <div className="px-4 py-6 sm:px-0">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Mission: Airport Signs</h1>
           <p className="text-lg text-gray-700 mb-8">
-            You've just landed at Kuala Lumpur International Airport (KLIA). Navigate your way through the airport by understanding the signs.
+            You&apos;ve just landed at Kuala Lumpur International Airport (KLIA). Navigate your way through the airport by understanding the signs.
           </p>
           <Quiz questions={quizQuestions} />
         </div>
