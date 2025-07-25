@@ -45,6 +45,16 @@ const quizQuestions = [
     options: ['Spicy Noodle Soup', 'Chicken Porridge', 'Fish Head Curry', 'Vegetable Stir-fry'],
     answer: 'Spicy Noodle Soup',
   },
+  {
+    question: 'What is "Nasi Kandar"?',
+    options: ['Rice with assorted curries', 'Fried noodles', 'Chicken rice', 'Fish soup'],
+    answer: 'Rice with assorted curries',
+  },
+  {
+    question: 'What is "Char Kuay Teow"?',
+    options: ['Stir-fried rice noodles', 'Coconut milk soup', 'Grilled meat skewers', 'Steamed chicken'],
+    answer: 'Stir-fried rice noodles',
+  },
 ];
 
 const fillInTheBlankQuestions = [
@@ -79,6 +89,14 @@ const fillInTheBlankQuestions = [
     {
         question: "A spicy noodle soup with a coconut milk base is called ____ ____.",
         answer: "Curry Laksa"
+    },
+    {
+        question: "A dish of steamed rice served with a variety of curries and side dishes is called ____ ____.",
+        answer: "Nasi Kandar"
+    },
+    {
+        question: "A popular stir-fried flat rice noodle dish in Malaysia is ____ ____ ____.",
+        answer: "Char Kuay Teow"
     }
 ];
 
@@ -92,6 +110,8 @@ const matchingGameItems = {
     { id: 6, text: 'Ikan Bakar', matchId: 6 },
     { id: 7, text: 'Roti Canai', matchId: 7 },
     { id: 8, text: 'Curry Laksa', matchId: 8 },
+    { id: 9, text: 'Nasi Kandar', matchId: 9 },
+    { id: 10, text: 'Char Kuay Teow', matchId: 10 },
   ],
   right: [
     { id: 1, text: 'Coconut Rice', matchId: 1 },
@@ -102,6 +122,8 @@ const matchingGameItems = {
     { id: 6, text: 'Grilled Fish', matchId: 6 },
     { id: 7, text: 'Flatbread', matchId: 7 },
     { id: 8, text: 'Spicy Noodle Soup', matchId: 8 },
+    { id: 9, text: 'Rice with assorted curries', matchId: 9 },
+    { id: 10, text: 'Stir-fried rice noodles', matchId: 10 },
   ].sort(() => Math.random() - 0.5),
 };
 

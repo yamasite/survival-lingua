@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface MatchItem {
   id: number;
@@ -13,9 +13,13 @@ interface MatchingGameProps {
 
 export default function MatchingGame({ items }: MatchingGameProps) {
   const [leftItems, setLeftItems] = useState<MatchItem[]>(items.left);
-  const [rightItems, setRightItems] = useState<MatchItem[]>(items.right);
+  const [rightItems, setRightItems] = useState<MatchItem[]>([]);
   const [selectedLeft, setSelectedLeft] = useState<MatchItem | null>(null);
   const [completed, setCompleted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setRightItems(items.right.sort(() => Math.random() - 0.5));
+  }, [items.right]);
 
   const handleLeftClick = (item: MatchItem) => {
     if (item.matchId === 0) return;

@@ -69,17 +69,17 @@ const MazeGame = () => {
   const [question, setQuestion] = useState<Question | null>(null);
   const [feedback, setFeedback] = useState('');
 
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+  const movePlayer = (direction: 'up' | 'down' | 'left' | 'right') => {
     if (question) return;
 
     const { x, y } = playerPosition;
     let newX = x;
     let newY = y;
 
-    if (e.key === 'ArrowUp') newY--;
-    if (e.key === 'ArrowDown') newY++;
-    if (e.key === 'ArrowLeft') newX--;
-    if (e.key === 'ArrowRight') newX++;
+    if (direction === 'up') newY--;
+    if (direction === 'down') newY++;
+    if (direction === 'left') newX--;
+    if (direction === 'right') newX++;
 
     if (maze[newY] && maze[newY][newX] !== 0) {
       setPlayerPosition({ x: newX, y: newY });
@@ -92,6 +92,13 @@ const MazeGame = () => {
         setMaze(newMaze);
       }
     }
+  };
+
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'ArrowUp') movePlayer('up');
+    if (e.key === 'ArrowDown') movePlayer('down');
+    if (e.key === 'ArrowLeft') movePlayer('left');
+    if (e.key === 'ArrowRight') movePlayer('right');
   }, [question, playerPosition, maze]);
 
   const handleAnswer = (answer: string) => {
@@ -133,6 +140,12 @@ const MazeGame = () => {
             </div>
           ))
         )}
+      </div>
+      <div className="mt-4">
+        <button onClick={() => movePlayer('up')} className="bg-gray-500 text-white px-4 py-2 m-1 rounded">Up</button>
+        <button onClick={() => movePlayer('down')} className="bg-gray-500 text-white px-4 py-2 m-1 rounded">Down</button>
+        <button onClick={() => movePlayer('left')} className="bg-gray-500 text-white px-4 py-2 m-1 rounded">Left</button>
+        <button onClick={() => movePlayer('right')} className="bg-gray-500 text-white px-4 py-2 m-1 rounded">Right</button>
       </div>
       {question && (
         <div className="mt-4 p-4 bg-gray-200 rounded w-max mx-auto">
